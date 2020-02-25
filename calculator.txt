@@ -1,0 +1,45 @@
+package Test;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+class Test extends JFrame implements ActionListener {
+JButton jb1;
+JTextField jt1, jt2;
+JLabel jl1, jl2;
+Test(){
+jt1 = new JTextField();
+jt1.setBounds(90, 50, 150, 30);
+add(jt1);
+jt2 = new JTextField();
+jt2.setBounds(90, 100, 150, 30);
+add(jt2);
+jl1 = new JLabel("Result");
+jl1.setBounds(90, 140, 150, 30);
+add(jl1);
+jb1 = new JButton("ADDITION");
+jb1.setBounds(90, 200, 100, 30);
+add(jb1);
+jl2 = new JLabel();
+jl2.setBounds(90, 160, 170, 30);
+add(jl2);
+jb1.addActionListener(this);
+setLayout(null);
+setSize(100,100);
+setVisible(true);
+}
+
+public void actionPerformed(ActionEvent e) {
+int a = Integer.parseInt(jt1.getText());
+int b = Integer.parseInt(jt2.getText());
+int c = 0;
+if (e.getSource().equals(jb1)){
+c = a + b;
+jl2.setText(String.valueOf(c));
+}}
+public static void main(String args[]) {
+Test t = new Test();
+}
+}
